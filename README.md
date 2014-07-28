@@ -3,6 +3,8 @@ Character Parser
 
 A simple parser to aid in the loading of Character files.
 
+Note: This is not meant to increase use of this character file format, it is still best to use a serializable format like xml, json, or binary. This library is to make creation of tools to possibly migrate or edit existing files easier.
+
 An example character file would be:
 
 	[ACCOUNT]
