@@ -1,5 +1,6 @@
 package org.nikkii.chartool.charfile;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +32,15 @@ public final class CharacterFile {
 	 */
 	public Section getSection(String name) {
 		return sections.get(name.toLowerCase());
+	}
+
+	/**
+	 * Get all current sections
+	 *
+	 * @return The section value collection from the map
+	 */
+	public Collection<Section> getSections() {
+		return sections.values();
 	}
 
 	@Override

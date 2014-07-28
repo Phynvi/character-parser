@@ -35,10 +35,25 @@ Example:
 You can also parse only certain sections of the file, like so:
 
 	CharacterFile ch = CharacterFileParser.parse(new File("character.txt"), new SectionNameFilter("account", "items"));
-    
-    Section account = ch.getSection("account");
-    
-    for (Map.Entry<String, List<String>> entry : account.getValues().entrySet()) {
-    	System.out.println("Entry name: " + entry.getKey());
-    	System.out.println("Entry values: " + entry.getValue();
-    }
+	
+	Section account = ch.getSection("account");
+	
+	for (Map.Entry<String, List<String>> entry : account.getValues().entrySet()) {
+		System.out.println("Entry name: " + entry.getKey());
+		System.out.println("Entry values: " + entry.getValue();
+	}
+	
+Or if you wanted to loop all sections:
+
+	CharacterFile ch = CharacterFileParser.parse(new File("character.txt"));
+	
+	for (Section section : ch.getSections()) {
+		switch (section.getName()) {
+			case "ACCOUNT":
+				break;
+			case "BANK":
+				break;
+			case "ITEMS":
+				break;
+		}
+	}
